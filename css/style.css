@@ -80,6 +80,7 @@ body {
 .container {
     width: var(--container--width);
     padding: 0 var(--container-padding-x);
+    padding-right: 60px;
 }
 
 h1 {
@@ -94,16 +95,18 @@ h2 {
 
 header {
     position: relative;
-    padding: var(--header-padding-x) 0;
 }
 
 header nav.header__menu {
+    max-height: 100px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     background-color: var(--main-bg);
     margin-left: var(--aside-widht);
     max-width: var(--container--width);
-    padding: 40px var(--container-padding-x) 0 var(--container-padding-x);
+    padding: 40px 60px 40px 15px;
 }
 
 header nav.aside-menu {
@@ -119,7 +122,7 @@ main {
 }
 
 .aside-menu {
-    padding: var(--menu-padding-y) 0;
+    padding-top: var(--menu-padding-y);
     padding-left: var(--aside-menu-padding-x);
     display: flex;
     flex-direction: column;
@@ -188,12 +191,6 @@ main {
     cursor: pointer;
 }
 
-.header__menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .header__menu-right {
     display: flex;
     flex-wrap: wrap;
@@ -228,25 +225,30 @@ main {
 .banner {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px 0;
 }
 
-.banner__top, .banner__bottom, .banner__first, .banner__second {
+.banner__top, .banner__bottom {
     display: flex;
-    flex-wrap: wrap;
     gap: var(--main-gap);
 }
 
 .banner__bottom {
-    display: flex;
     flex-direction: row-reverse;
-    padding-top: 20px;
 }
 
-.banner__first, .banner__second {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: calc((var(--content-width) - var(--main-gap)) / 2);
+.banner__horizontal, .banner__vertical {
+    display: flex;
+    width: calc(50% - 10px);
+    gap: var(--main-gap);
+}
+
+.banner__horizontal {
+    flex-direction: column;
+    height: calc(100vh - 140px);
+}
+
+.banner__vertical {
+    height: calc((100vh - 120px) / 2);
 }
 
 .banner p {
@@ -259,94 +261,70 @@ main {
     text-transform: uppercase;
 }
 
-.banner__first-get-up {
+.banner__buy, .banner__trending, .banner__get-up, .banner__summer {
     display: flex;
-    background-image: url("../assets/img/banner1.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: var(--border-radius-img);
-    width: 100%;
-    min-height: 180px;
+    flex-wrap: wrap;
+    align-content: center;
     align-items: center;
-    justify-content: center;
-
-}
-
-.banner__first-summer {
-    background-image: url("../assets/img/banner2.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: var(--border-radius-img);
     width: 100%;
-    min-height: 180px;
-}
-
-.banner__second-girl1 {
-    background-image: url("../assets/img/banner3.jpg");
+    height: 180px;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 380px;
-    width: 257px;
+    background-size: cover;
     border-radius: var(--border-radius-img);
-}
-
-.banner__second-girl2 {
-    background-image: url("../assets/img/banner4.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 380px;
-    width: 257px;
-    border-radius: var(--border-radius-img);
-}
-
-.banner__second-girl3 {
-    background-image: url("../assets/img/banner5.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 380px;
-    width: 257px;
-    border-radius: var(--border-radius-img);
-}
-
-.banner__second-girl4 {
-    background-image: url("../assets/img/banner6.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 380px;
-    width: 257px;
-    border-radius: var(--border-radius-img);
-}
-
-.banner__first-trending {
-    display: flex;
-    flex-direction: column;
-    background-image: url("../assets/img/banner7.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: var(--border-radius-img);
-    width: 100%;
-    min-height: 180px;
-    justify-content: center;
     padding-left: 30px;
 }
 
-.banner__first-trending h2 {
+.banner__girl1, .banner__girl2, .banner__girl3, .banner__girl4 {
+    /*width: calc(50% - 10px);*/
+    display: flex;
+    width: 100%;
+    height: 380px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius-img);
+}
+
+.banner__get-up {
+    align-items: center;
+    justify-content: center;
+    background-image: url("../assets/img/banner1.jpg");
+}
+
+.banner__summer {
+    background-image: url("../assets/img/banner2.jpg");
+}
+
+.banner__girl1 {
+    background-image: url("../assets/img/banner3.jpg");
+}
+
+.banner__girl2 {
+    background-image: url("../assets/img/banner4.jpg");
+}
+
+.banner__girl3 {
+    background-image: url("../assets/img/banner5.jpg");
+}
+
+.banner__girl4 {
+    background-image: url("../assets/img/banner6.jpg");
+}
+
+.banner__trending {
+    background-image: url("../assets/img/banner7.jpg");
+}
+
+.banner__trending h2 {
+    padding-right: 80px;
     color: var(--color-accent-blue);
 }
 
-.banner__first-buy {
-    display: flex;
-    flex-direction: column;
+.banner__buy {
     background-image: url("../assets/img/banner8.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: var(--border-radius-img);
-    width: 100%;
-    min-height: 180px;
-    justify-content: center;
-    padding-left: 30px;
 }
 
-.banner__first-buy h2 {
+.banner__buy h2 {
     color: var(--color-accent-red);
 }
