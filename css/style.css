@@ -111,22 +111,19 @@ header nav.header__menu {
 
 header nav.aside-menu {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: var(--aside-widht);
     height: 100vh;
     left: 0;
     top: 0;
+    padding-top: var(--menu-padding-y);
+    padding-left: var(--aside-menu-padding-x);
 }
 
 main {
     margin-left: var(--aside-widht);
-}
-
-.aside-menu {
-    padding-top: var(--menu-padding-y);
-    padding-left: var(--aside-menu-padding-x);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .aside-menu__list {
@@ -161,7 +158,7 @@ main {
 .aside-menu__btn {
     display: flex;
     align-items: center;
-    padding: 0;
+    padding-bottom: 30px;
 }
 
 .search-form {
@@ -222,13 +219,9 @@ main {
     gap: var(--aside-menu-gap);
 }
 
-.banner {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .banner__top, .banner__bottom {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--main-gap);
 }
 
@@ -244,11 +237,6 @@ main {
 
 .banner__horizontal {
     flex-direction: column;
-    height: calc(100vh - 140px);
-}
-
-.banner__vertical {
-    height: calc((100vh - 120px) / 2);
 }
 
 .banner p {
@@ -267,7 +255,8 @@ main {
     align-content: center;
     align-items: center;
     width: 100%;
-    height: 180px;
+    height: calc((100vh - 220px) / 4);
+    min-height: 180px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -276,10 +265,10 @@ main {
 }
 
 .banner__girl1, .banner__girl2, .banner__girl3, .banner__girl4 {
-    /*width: calc(50% - 10px);*/
+    width: calc(50% - 10px);
+    height: calc((100vh - 180px) / 2);
+    min-height: 380px;
     display: flex;
-    width: 100%;
-    height: 380px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
