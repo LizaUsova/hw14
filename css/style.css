@@ -255,18 +255,18 @@ main {
     align-content: center;
     align-items: center;
     width: 100%;
-    height: calc((100vh - 220px) / 4);
+    /*height: calc((100vh - 120px) / 4);*/
     min-height: 180px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-radius: var(--border-radius-img);
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 .banner__girl1, .banner__girl2, .banner__girl3, .banner__girl4 {
     width: calc(50% - 10px);
-    height: calc((100vh - 180px) / 2);
+    height: calc((100vh - 140px) / 2);
     min-height: 380px;
     display: flex;
     background-repeat: no-repeat;
